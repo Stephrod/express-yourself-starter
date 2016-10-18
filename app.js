@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 //adds a route to my express app the renders my index view
 app.get('/', function(req, res, next) {
   ghAvatar('Stephrod').then(avatar => {
-  res.render('index.ejs', { greeting: 'Hello my name is Stephanie Rodriguez. I am a web developer out of Austin, TX', skills: ['HTML', 'CSS', 'Javascript', 'JQuery', 'Node.js/ Express.js'], hobbies: ['Coding', 'Social Outings', 'BBQing', 'Softball', 'Swimming'] });
+  res.render('index.ejs', { ghAvatar: avatar, greeting: 'Hello my name is Stephanie Rodriguez. I am a web developer out of Austin, TX', skills: ['HTML', 'CSS', 'Javascript', 'JQuery', 'Node.js/ Express.js'], hobbies: ['Coding', 'Social Outings', 'BBQing', 'Softball', 'Swimming'] });
   });
 });
 
