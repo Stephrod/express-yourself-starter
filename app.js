@@ -1,7 +1,7 @@
 //sets my dependency from npm(package.json)
 const express = require('express');
 const ejs = require('ejs');
-
+const ghAvatar = require('gh-avatar');
 //sets my dependency from node
 const path = require('path');
 
@@ -14,8 +14,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //adds a route to my express app the renders my index view
-app.get('/', function(req, res, next){
+app.get('/', function(req, res, next) {
+  ghAvatar('Stephrod').then(avatar => {
   res.render('index.ejs', { greeting: 'Hello my name is Stephanie Rodriguez. I am a web developer out of Austin, TX', skills: ['HTML', 'CSS', 'Javascript', 'JQuery', 'Node.js/ Express.js'], hobbies: ['Coding', 'Social Outings', 'BBQing', 'Softball', 'Swimming'] });
+  });
 });
 
 //sets up my server
